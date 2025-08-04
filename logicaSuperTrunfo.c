@@ -26,7 +26,7 @@ printf("Cadastro de cartas\n\n");
 
     char estado01;
     char codigo01[4];
-    char cidade01[20];
+    char cidade01[35];
     unsigned long int populacao01;
     float area01, pib01;
     float densidade01; 
@@ -47,10 +47,10 @@ printf("Cadastro de cartas\n\n");
     scanf("%s", codigo01);
 
     printf("Digite o nome da cidade: ");
-    scanf("%s", cidade01);
+    fgets("%s", cidade01);
     
     printf("Digite a população da cidade: ");
-    scanf("%d", &populacao01);        
+    scanf("%lu", &populacao01);        
 
     printf("Digite a area da cidade: ");
     scanf("%f", &area01);
@@ -63,9 +63,9 @@ printf("Cadastro de cartas\n\n");
 
     densidade01 = (float) populacao01 / area01;
 
-    pibper01 = (float) populacao01 / pib01;
+    pibper01 = (float) pib01 / populacao01;
 
-    superpoder01 = (float) populacao01 + area01 + pib01 + pturisticos01 + densidade01 + pibper01;
+    superpoder01 = (double) populacao01 + area01 + pib01 + pturisticos01 + densidade01 + pibper01;
         
     //duas linhas espeço
    printf("\n"); // Espaço 1
@@ -82,7 +82,7 @@ printf("Cadastro de cartas\n\n");
 
     printf("Cidade: %s\n", cidade01);
 
-    printf("População: %d\n", populacao01);
+    printf("População: %lu\n", populacao01);
 
     printf("Area: %.2f\n", area01);
 
@@ -103,7 +103,7 @@ printf("Cadastro de cartas\n\n");
 
     char estado02;
     char codigo02[4];
-    char cidade02[20];
+    char cidade02[35];
     unsigned long int populacao02;
     float area02, pib02;
     float densidade02; 
@@ -120,7 +120,7 @@ printf("Cadastro de cartas\n\n");
     scanf("%s", codigo02);
 
     printf("Digite o nome da cidade: ");
-    scanf("%s", cidade02);
+    fgets("%s", cidade02);
     
     printf("Digite a população da cidade: ");
     scanf("%d", &populacao02);        
@@ -134,11 +134,11 @@ printf("Cadastro de cartas\n\n");
     printf("Digite a quantidade de pontos turisticos da cidade: ");
     scanf("%d", &pturisticos02);
     
-    densidade02 = (float) area02 / populacao02;
+    densidade02 = (float) populacao02 / area02;
 
     pibper02 = (float) pib02 / populacao02;
 
-    superpoder02 = (float) populacao02 + area02 + pib02 + pturisticos02 + densidade02 + pibper02;
+    superpoder02 = (double) populacao02 + area02 + pib02 + pturisticos02 + densidade02 + pibper02;
 
     //duas linhas espeço
    printf("\n"); // Espaço 1
