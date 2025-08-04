@@ -27,10 +27,10 @@ printf("Cadastro de cartas\n\n");
     char estado01;
     char codigo01[4];
     char cidade01[20];
-    int populacao01;
+    unsigned long int populacao01;
     float area01, pib01;
-    double densidade01; 
-    double pibper01;
+    float densidade01; 
+    float pibper01;
     int pturisticos01;
     float superpoder01;
 
@@ -61,9 +61,9 @@ printf("Cadastro de cartas\n\n");
     printf("Digite a quantidade de pontos turisticos da cidade: ");
     scanf("%d", &pturisticos01);
 
-    densidade01 = (double) area01 / populacao01;
+    densidade01 = (double) populacao01 / area01;
 
-    pibper01 = (double) pib01 / populacao01;
+    pibper01 = (double) populacao01 / pib01;
 
     superpoder01 = (float) populacao01 + area01 + pib01 + pturisticos01 + densidade01 + pibper01;
         
@@ -104,10 +104,10 @@ printf("Cadastro de cartas\n\n");
     char estado02;
     char codigo02[4];
     char cidade02[20];
-    int populacao02;
+    unsigned long int populacao02;
     float area02, pib02;
-    double densidade02; 
-    double pibper02;
+    float densidade02; 
+    float pibper02;
     int pturisticos02;
     float superpoder02;
 
