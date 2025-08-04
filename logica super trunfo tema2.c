@@ -45,27 +45,30 @@ printf("Cadastro de cartas\n\n");
 
     printf("Digite o codigo alfanumerico da carta (EX: A00): ");
     scanf("%s", codigo01);
+    getchar();
 
     printf("Digite o nome da cidade: ");
-    fgets("%s", cidade01);
+    fgets(cidade01, 35, stdin);
     
-    printf("Digite a população da cidade: ");
+    printf("Digite a população da cidade (população deve ser maior que 0): ");
     scanf("%lu", &populacao01);        
 
-    printf("Digite a area da cidade: ");
+    printf("Digite a area da cidade (area deve ser maior que 0): ");
     scanf("%f", &area01);
 
-    printf("Digite o PIB da cidade: ");
+    printf("Digite o PIB da cidade (pib deve ser maior que 0): ");
     scanf("%f", &pib01);    
 
     printf("Digite a quantidade de pontos turisticos da cidade: ");
     scanf("%d", &pturisticos01);
+    
+    densidade01 = (float) (populacao01 > 0) * populacao01 / area01;
 
-    densidade01 = (float) populacao01 / area01;
-
-    pibper01 = (float) pib01 / populacao01;
+    pibper01 = (float) (pib01 > 0) * pib01 / populacao01;
 
     superpoder01 = (double) populacao01 + area01 + pib01 + pturisticos01 + densidade01 + pibper01;
+
+    printf("seu super poder é: %.2f\n", superpoder01);
         
     //duas linhas espeço
    printf("\n"); // Espaço 1
@@ -118,27 +121,30 @@ printf("Cadastro de cartas\n\n");
 
     printf("Digite o codigo alfanumerico da carta (EX: A00): ");
     scanf("%s", codigo02);
+    getchar();
 
     printf("Digite o nome da cidade: ");
-    fgets("%s", cidade02);
+    fgets(cidade02, 35, stdin);;
     
-    printf("Digite a população da cidade: ");
+    printf("Digite a população da cidade (populacao deve ser maior que 0): ");
     scanf("%d", &populacao02);        
 
-    printf("Digite a area da cidade: ");
+    printf("Digite a area da cidade (area deve ser maior que 0): ");
     scanf("%f", &area02);
 
-    printf("Digite o PIB da cidade: ");
+    printf("Digite o PIB da cidade pib deve ser maior que 0): ");
     scanf("%f", &pib02);    
 
     printf("Digite a quantidade de pontos turisticos da cidade: ");
     scanf("%d", &pturisticos02);
     
-    densidade02 = (float) populacao02 / area02;
+    densidade02 = (float) (populacao02 > 0) * populacao02 / area02;
 
-    pibper02 = (float) pib02 / populacao02;
+    pibper02 = (float) (pib02 > 0) * pib02 / populacao02;
 
     superpoder02 = (double) populacao02 + area02 + pib02 + pturisticos02 + densidade02 + pibper02;
+
+    printf("seu super poder é: %.2f\n", superpoder02);
 
     //duas linhas espeço
    printf("\n"); // Espaço 1
@@ -152,10 +158,10 @@ printf("Cadastro de cartas\n\n");
     printf("Estado: %c\n", estado02);
     
     printf("Codigo: %s\n", codigo02);
-
+    
     printf("Cidade: %s\n", cidade02);
 
-    printf("População: %d\n", populacao02);
+    printf("População: %lu\n", populacao02);
 
     printf("Area: %.2f\n", area02);
 
