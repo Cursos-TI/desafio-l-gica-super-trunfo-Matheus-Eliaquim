@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
+// Tema 2 - Logica
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
 //Teste larissa
@@ -26,11 +26,12 @@ printf("Cadastro de cartas\n\n");
 
     char estado01;
     char codigo01[4];
-    char cidade01[35];
+    char cidade01[20];
     unsigned long int populacao01;
-    float area01, pib01;
-    float densidade01; 
-    float pibper01;
+    float area01; 
+    double pib01;
+    double densidade01; 
+    double pibper01;
     int pturisticos01;
     float superpoder01;
 
@@ -42,33 +43,54 @@ printf("Cadastro de cartas\n\n");
 
     printf("Digite uma letra de A a Z para representar o Estado: ");
     scanf(" %c", &estado01);
-
+    
     printf("Digite o codigo alfanumerico da carta (EX: A00): ");
     scanf("%s", codigo01);
-    getchar();
 
     printf("Digite o nome da cidade: ");
+    getchar();
     fgets(cidade01, 35, stdin);
+        
+    printf("Digite a população da cidade: ");
+    scanf("%lu", &populacao01);
     
-    printf("Digite a população da cidade (população deve ser maior que 0): ");
-    scanf("%lu", &populacao01);        
-
-    printf("Digite a area da cidade (area deve ser maior que 0): ");
+    printf("Digite a area da cidade: ");
     scanf("%f", &area01);
+    
+    printf("Digite o PIB da cidade: ");
+    scanf("%lf", &pib01);
 
-    printf("Digite o PIB da cidade (pib deve ser maior que 0): ");
-    scanf("%f", &pib01);    
-
+    if (pib01 > 0) {
+        pib01 = pib01 * 1000000000;
+    } else {
+        pib01 = 0;
+    }
+    
     printf("Digite a quantidade de pontos turisticos da cidade: ");
     scanf("%d", &pturisticos01);
     
-    densidade01 = (float) (populacao01 > 0) * populacao01 / area01;
+    if (area01 != 0) {
+            densidade01 = (double) populacao01 / area01;
+        } else {
+            densidade01 = 0.0; // Ou outro valor apropriado
+            printf("Atenção: Área da Carta 1 é zero! Densidade populacional definida como 0.\\n");
+        }
 
-    pibper01 = (float) (pib01 > 0) * pib01 / populacao01;
+   
+    if (populacao01 != 0) {
+            pibper01 = (double) pib01 / populacao01;
+        } else {
+            pibper01 = 0.0; // Ou outro valor apropriado
+            printf("Atenção: População da Carta 1 é zero! PIB per Capita definida como 0.\\n");
+        }
 
-    superpoder01 = (double) populacao01 + area01 + pib01 + pturisticos01 + densidade01 + pibper01;
+    if (densidade01 != 0) {
+            superpoder01 = (double)populacao01 + area01 + pib01 + pturisticos01 + pibper01 + (1.0f / densidade01);
+        } else {
+            superpoder01 = (double)populacao01 + area01 + pib01 + pturisticos01 + pibper01; // Sem o inverso
+            printf("Atenção: Densidade populacional da Carta 1 é zero. Super Poder calculado sem o inverso da densidade.\\n");
+        }
 
-    printf("seu super poder é: %.2f\n", superpoder01);
         
     //duas linhas espeço
    printf("\n"); // Espaço 1
@@ -89,15 +111,15 @@ printf("Cadastro de cartas\n\n");
 
     printf("Area: %.2f\n", area01);
 
-    printf("P.I.B: %.2f\n", pib01);
+    printf("P.I.B: %.2lf\n", pib01);
 
     printf("Pontos turisticos: %d\n", pturisticos01);
 
-    printf("Densidade populacional: %.2f\n", densidade01);
+    printf("Densidade populacional: %.2lf\n", densidade01);
 
-    printf("PIB percapto: %.2f\n", pibper01);
+    printf("PIB percapto: %.2lf\n", pibper01);
 
-    printf("Super poder: %.2f\n", superpoder01);
+    printf("Super poder: %.2lf\n", superpoder01);
      
     printf("\n"); // Linha de espaço
 
@@ -106,45 +128,70 @@ printf("Cadastro de cartas\n\n");
 
     char estado02;
     char codigo02[4];
-    char cidade02[35];
+    char cidade02[20];
     unsigned long int populacao02;
-    float area02, pib02;
-    float densidade02; 
-    float pibper02;
+    float area02;
+    double pib02;
+    double densidade02; 
+    double pibper02;
     int pturisticos02;
     float superpoder02;
 
     printf("Cadastro de cartas\n\n");
 
-     printf("Digite uma letra de A a Z para representar o Estado: ");
+    printf("Digite uma letra de A a Z para representar o Estado: ");
     scanf(" %c", &estado02);
-
+        
     printf("Digite o codigo alfanumerico da carta (EX: A00): ");
     scanf("%s", codigo02);
-    getchar();
-
-    printf("Digite o nome da cidade: ");
-    fgets(cidade02, 35, stdin);;
     
-    printf("Digite a população da cidade (populacao deve ser maior que 0): ");
-    scanf("%d", &populacao02);        
-
-    printf("Digite a area da cidade (area deve ser maior que 0): ");
+    printf("Digite o nome da cidade: ");
+    getchar();
+    fgets(cidade02, 35, stdin);
+        
+    printf("Digite a população da cidade: ");
+    scanf("%lu", &populacao02);   
+    
+    printf("Digite a area da cidade: ");
     scanf("%f", &area02);
+    
+    printf("Digite o PIB da cidade: ");
+    scanf("%lf", &pib02);
 
-    printf("Digite o PIB da cidade pib deve ser maior que 0): ");
-    scanf("%f", &pib02);    
+    if (pib02 > 0) {
+        pib02 = pib02 * 1000000000;
+    } else {
+        pib02 = 0;
 
+    }
+        
     printf("Digite a quantidade de pontos turisticos da cidade: ");
     scanf("%d", &pturisticos02);
+
     
-    densidade02 = (float) (populacao02 > 0) * populacao02 / area02;
+        
+     if (area02 != 0) {
+            densidade02 = (double) populacao02 / area02;
+        } else {
+            densidade02 = 0.0; // Ou outro valor apropriado
+            printf("Atenção: Área da Carta 2 é zero! Densidade populacional definida como 0.\\n");
+        }
 
-    pibper02 = (float) (pib02 > 0) * pib02 / populacao02;
+   
+    if (populacao02 != 0) {
+            pibper02 = (double) pib02 / populacao02;
+        } else {
+            pibper02 = 0.0; // Ou outro valor apropriado
+            printf("Atenção: População da Carta 2 é zero! PIB per Capita definida como 0.\\n");
+        }
 
-    superpoder02 = (double) populacao02 + area02 + pib02 + pturisticos02 + densidade02 + pibper02;
+    if (densidade02 != 0) {
+            superpoder02 = (double)populacao02 + area02 + pib02 + pturisticos02 + pibper02 + (1.0f / densidade02);
+        } else {
+            superpoder01 = (double)populacao02 + area02 + pib02 + pturisticos02 + pibper02; // Sem o inverso
+            printf("Atenção: Densidade populacional da Carta 2 é zero. Super Poder calculado sem o inverso da densidade.\\n");
+        }
 
-    printf("seu super poder é: %.2f\n", superpoder02);
 
     //duas linhas espeço
    printf("\n"); // Espaço 1
@@ -158,34 +205,26 @@ printf("Cadastro de cartas\n\n");
     printf("Estado: %c\n", estado02);
     
     printf("Codigo: %s\n", codigo02);
-    
+
     printf("Cidade: %s\n", cidade02);
 
     printf("População: %lu\n", populacao02);
 
     printf("Area: %.2f\n", area02);
 
-    printf("P.I.B: %.2f\n", pib02);
+    printf("P.I.B: %.2lf\n", pib02);
 
     printf("Pontos turisticos: %d\n", pturisticos02);
 
-    printf("Densidade populacional: %.2f\n", densidade02);
+    printf("Densidade populacional: %.2lf\n", densidade02);
 
-    printf("PIB percapto: %.2f\n", pibper02);
+    printf("PIB percapto: %.2lf\n", pibper02);
 
-    printf("Super poder: %.2f\n", superpoder02);
+    printf("Super poder: %.2lf\n", superpoder02);
      
     printf("\n\n"); // Linha de espaço
 
     //comparação de cartas
-
-    printf("COMPARAÇÃO DE CARTAS\n\n");
-    
-    printf("Na comparação de cartas os pontos da carta 01 serão comparados com os pontos da carta 02\n."
-        "Se ao fim de comparação aparecer o numero 0 significa que a carta um perdeu, se aparecer o\n"
-        "numero 1 significa que a carta 01 venceu aquele ponto\n\n");
-
-    //codigo da comparação de cartas
 
     int populacao03 = populacao01 > populacao02;
     int area03 = area01 > area02; 
@@ -194,30 +233,151 @@ printf("Cadastro de cartas\n\n");
     int pibper03 = pibper01 > pibper02;
     int pturisticos03 = pturisticos01 > pturisticos02;
     int superpoder03 = superpoder01 > superpoder02;
-    int somatotal = (populacao03 + area03 + pib03 + densidade03 + pibper03 + pturisticos03 + superpoder03);  
+    int somatotal = (populacao03 + area03 + pib03 + densidade03 + pibper03 + pturisticos03 + superpoder03);
+    int opcao01, opcao02;    
 
+    printf("COMPARAÇÃO DE CARTAS\n\n");  
+    printf("Digite o numero de dois atributos abaixo.\n"); 
+    printf("1. População\n");
+    printf("2. Area\n");
+    printf("3. P.I.B.\n");
+    printf("4. Pontos turisticos\n");
+    printf("5. Densidade populacional\n");
+    printf("6. P.I.B. percapto\n");
+    printf("7. Super poder\n");
+
+    //seçõa para o usuario escolher quais dados ele quer comparar
+
+    printf("Primeiro atributo: \n");
+    scanf("%d", &opcao01);
+
+    printf("Segundo atributo: \n");
+    scanf("%d", &opcao02);
+
+    //codigo da comparação de cartas
+
+    switch (opcao01) {
+        case 1: 
+        if (populacao03 == 1) {
+            printf("A carta 01 venceu, no atributo população!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo população!\n");
+        }
+        break;
+
+        case 2: 
+        if (area03 == 1) {
+            printf("A carta 01 venceu, no atributo area!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo area!\n");
+        }
+        break;
+
+        case 3: 
+        if (pib03 == 1) {
+            printf("A carta 01 venceu, no atributo PIB!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo PIB!\n");
+        }
+        break;
+
+        case 4:
+        if (pturisticos03 == 1) {
+            printf("A carta 01 venceu, no atributo pontos turisticos!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo pontos turisticos!\n");
+        }
+        break;
+
+        case 5:
+        if (densidade03 == 1) {
+            printf("A carta 01 venceu, no atributo densidade populacional!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo densidade populacional!\n");
+        }
+        break;
     
+        case 6: 
+        if (pibper03 == 1) {
+            printf("A carta 01 venceu, no atributo PIB percapto!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo PIB percapto!\n");
+        }
+        break;
 
-    printf("carta 01\n");
-    printf("População: %d\n", populacao03);
-    printf("Area: %d\n", area03);
-    printf("PIB: %d\n", pib03);
-    printf("Pontos turisticos: %d\n", pturisticos03);
-    printf("Densidade: %d\n", densidade03);
-    printf("PIB percapto: %d\n", pibper03);
-    printf("Super poder: %d\n\n", superpoder03);
-
-
-
-    if(somatotal >= 4) {
-        printf("A carta 01 venceu!\n\n");
-    } else {
-        printf("A carta 02 venceu!\n\n");
+        case 7:
+        if (superpoder03 == 1) {
+            printf("A carta 01 venceu, no atributo super poder!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo super poder!\n");
+        }
+        break;
     }
         
 
+        switch (opcao02) {
+        case 1: 
+        if (populacao03 == 1) {
+            printf("A carta 01 venceu, no atributo população!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo população!!\n");
+        }
+        break;
+
+        case 2: 
+        if (area03 == 1) {
+            printf("A carta 01 venceu, no atributo area!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo area!\n");
+        }
+        break;
+
+        case 3: 
+        if (pib03 == 1) {
+            printf("A carta 01 venceu, no atributo PIB!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo PIB!\n");
+        }
+        break;
+
+        case 4:
+        if (pturisticos03 == 1) {
+            printf("A carta 01 venceu, no atributo pontos turisticos!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo pontos turisticos!\n");
+        }
+        break;
+
+        case 5:
+        if (densidade03 == 1) {
+            printf("A carta 01 venceu, no atributo densidade populacional!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo densidade populacional!\n");
+        }
+        break;
+
+        case 6: 
+        if (pibper03 == 1) {
+            printf("A carta 01 venceu, no atributo PIB percapto!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo PIB percapto!\n");
+        }
+        break;
+
+        case 7:
+        if (superpoder03 == 1) {
+            printf("A carta 01 venceu, no atributo super poder!\n");
+        } else {
+            printf("A carta 01 perdeu, no atributo super poder!\n");
+        }
+        break;
+
+        
+    }
+ 
     
 
 
     return 0;
 }
+
