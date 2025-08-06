@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Desafio Super Trunfo - Países
-// Tema 2 - Logica
+// Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
 //Teste larissa
@@ -33,7 +33,7 @@ printf("Cadastro de cartas\n\n");
     double densidade01; 
     double pibper01;
     int pturisticos01;
-    float superpoder01;
+    double superpoder01;
 
     
     
@@ -135,7 +135,7 @@ printf("Cadastro de cartas\n\n");
     double densidade02; 
     double pibper02;
     int pturisticos02;
-    float superpoder02;
+    double superpoder02;
 
     printf("Cadastro de cartas\n\n");
 
@@ -188,7 +188,7 @@ printf("Cadastro de cartas\n\n");
     if (densidade02 != 0) {
             superpoder02 = (double)populacao02 + area02 + pib02 + pturisticos02 + pibper02 + (1.0f / densidade02);
         } else {
-            superpoder01 = (double)populacao02 + area02 + pib02 + pturisticos02 + pibper02; // Sem o inverso
+            superpoder02 = (double)populacao02 + area02 + pib02 + pturisticos02 + pibper02; // Sem o inverso
             printf("Atenção: Densidade populacional da Carta 2 é zero. Super Poder calculado sem o inverso da densidade.\\n");
         }
 
