@@ -343,14 +343,15 @@ do {
         }
         break;
     }
-        
+
+            
 
         switch (opcao02) {
         case 1:
         printf("População: %lu\n", populacao01);
         printf("População: %lu\n", populacao02);
-        soma01 += (double)populacao01;
-        soma02 += (double)populacao02; 
+        soma03 = (double)populacao01;
+        soma04 = (double)populacao02; 
         if (populacao01 > populacao02) {
             printf("A carta 01 venceu, no atributo população!\n\n");
         } else {
@@ -361,8 +362,8 @@ do {
         case 2: 
         printf("Area: %.2f\n", area01);
         printf("Area: %.2f\n", area02);
-        soma01 += area01;
-        soma02 += area02;
+        soma03 = area01;
+        soma04 = area02;
         if (area01 > area02) {
             printf("A carta 01 venceu, no atributo area!\n\n");
         } else {
@@ -373,8 +374,8 @@ do {
         case 3: 
         printf("P.I.B: %.2lf\n", pib01);
         printf("P.I.B: %.2lf\n", pib02);
-        soma01 += pib01;
-        soma02 += pib02;
+        soma03 = pib01;
+        soma04 = pib02;
         if (pib01 > pib02) {
             printf("A carta 01 venceu, no atributo PIB!\n\n");
         } else {
@@ -385,8 +386,8 @@ do {
         case 4:
         printf("Pontos turisticos: %d\n", pturisticos01);
         printf("Pontos turisticos: %d\n", pturisticos02);
-        soma01 += pturisticos01;
-        soma02 += pturisticos02;
+        soma03 = pturisticos01;
+        soma04 = pturisticos02;
         if (pturisticos01 > pturisticos02) {
             printf("A carta 01 venceu, no atributo pontos turisticos!\n\n");
         } else {
@@ -397,8 +398,8 @@ do {
         case 5:
         printf("Densidade populacional: %.2lf\n", densidade01);
         printf("Densidade populacional: %.2lf\n", densidade02);
-        soma01 += -densidade01;
-        soma02 += -densidade02;
+        soma03 = -densidade01;
+        soma04 = -densidade02;
         if (densidade01 < densidade02) {
             printf("A carta 01 venceu, no atributo densidade populacional!\n\n");
         } else {
@@ -409,8 +410,8 @@ do {
         case 6:
         printf("PIB percapto: %.2lf\n", pibper01);
         printf("PIB percapto: %.2lf\n", pibper02);
-        soma01 += pibper01;
-        soma02 += pibper02;
+        soma03 = pibper01;
+        soma04 = pibper02;
         if (pibper01 > pibper02) {
             printf("A carta 01 venceu, no atributo PIB percapto!\n\n");
         } else {
@@ -421,8 +422,8 @@ do {
         case 7:
         printf("Super poder: %.2lf\n", superpoder01);
         printf("Super poder: %.2lf\n", superpoder02);
-        soma01 += superpoder01;
-        soma02 += superpoder02;
+        soma03 = superpoder01;
+        soma04 = superpoder02;
         if (superpoder01 > superpoder02) {
             printf("A carta 01 venceu, no atributo super poder!\n\n");
         } else {
@@ -430,7 +431,35 @@ do {
         }
         break;
                    
-    }   
+    }  
+
+    double soma05 = soma01 + soma03;
+    double soma06 = soma02 + soma04;
+
+    
+
+
+    printf("Carta 01\n");
+    printf("Estado: %c\n", estado01);
+    printf("Atributo 01: %.2f\n", soma01);
+    printf("Atributo 01: %.2f\n", soma03);
+    printf("Soma dos atributos: %.2f\n\n", soma05);
+
+
+    
+    printf("Carta 02");
+    printf("Estado: %c\n", estado02);
+    printf("Atributo 01: %.2f\n", soma02);
+    printf("Atributo 01: %.2f\n", soma04);
+    printf("Soma dos atributos: %.2f\n\n", soma06);
+    
+     if (soma05 > soma06) {
+            printf("Carta 01 é a vencedora com maior soma de atributos!\n");
+        } else if (soma05 < soma06) {
+            printf("Carta 02 é a vencedora com maior soma de atributos!\n");
+        } else {
+            printf("Empate! As cartas têm a mesma soma de atributos.\n\n");
+        }
  
            
       
