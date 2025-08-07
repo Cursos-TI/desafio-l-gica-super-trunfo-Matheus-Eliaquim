@@ -226,15 +226,9 @@ printf("Cadastro de cartas\n\n");
 
     //comparação de cartas
 
-    int populacao03 = populacao01 > populacao02;
-    int area03 = area01 > area02; 
-    int pib03 = pib01 > pib02;
-    int densidade03 = densidade01 < densidade02; 
-    int pibper03 = pibper01 > pibper02;
-    int pturisticos03 = pturisticos01 > pturisticos02;
-    int superpoder03 = superpoder01 > superpoder02;
-    int somatotal = (populacao03 + area03 + pib03 + densidade03 + pibper03 + pturisticos03 + superpoder03);
-    int opcao01, opcao02;    
+    
+    int opcao01, opcao02;  
+    double soma01, soma02;  
 
     printf("COMPARAÇÃO DE CARTAS\n\n");  
     printf("Digite o numero de dois atributos abaixo.\n"); 
@@ -244,140 +238,209 @@ printf("Cadastro de cartas\n\n");
     printf("4. Pontos turisticos\n");
     printf("5. Densidade populacional\n");
     printf("6. P.I.B. percapto\n");
-    printf("7. Super poder\n");
+    printf("7. Super poder\n\n");
 
     //seçõa para o usuario escolher quais dados ele quer comparar
 
-    printf("Primeiro atributo: \n");
+   do {
+    printf("Primeiro atributo (1 a 7): ");
     scanf("%d", &opcao01);
+} while (opcao01 < 1 || opcao01 > 7);
 
-    printf("Segundo atributo: \n");
+do {
+    printf("Segundo atributo (1 a 7 e diferente do primeiro): ");
     scanf("%d", &opcao02);
+    if (opcao02 == opcao01)
+        printf("⚠️ Os atributos devem ser diferentes.\n");
+} while (opcao02 < 1 || opcao02 > 7 || opcao02 == opcao01);
+
+     printf("\n\n");
 
     //codigo da comparação de cartas
 
     switch (opcao01) {
         case 1: 
-        if (populacao03 == 1) {
-            printf("A carta 01 venceu, no atributo população!\n");
+        printf("População: %lu\n", populacao01);
+        printf("População: %lu\n", populacao02);
+        soma01 = populacao01;
+        soma02 = populacao02;
+        if (populacao01 > populacao02) {
+            printf("A carta 01 venceu, no atributo população!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo população!\n");
+            printf("A carta 01 perdeu, no atributo população!\n\n");
         }
         break;
 
         case 2: 
-        if (area03 == 1) {
-            printf("A carta 01 venceu, no atributo area!\n");
+        printf("Area: %.2f\n", area01);
+        printf("Area: %.2f\n", area02);
+        soma01 = area01;
+        soma02 = area02;
+        if (area01 > area02) {
+            printf("A carta 01 venceu, no atributo area!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo area!\n");
+            printf("A carta 01 perdeu, no atributo area!\n\n");
         }
         break;
 
         case 3: 
-        if (pib03 == 1) {
-            printf("A carta 01 venceu, no atributo PIB!\n");
+        printf("P.I.B: %.2lf\n", pib01);
+        printf("P.I.B: %.2lf\n", pib02);
+        soma01 = pib01;
+        soma02 = pib02;
+        if (pib01 > pib02) {
+            printf("A carta 01 venceu, no atributo PIB!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo PIB!\n");
+            printf("A carta 01 perdeu, no atributo PIB!\n\n");
         }
         break;
 
         case 4:
-        if (pturisticos03 == 1) {
-            printf("A carta 01 venceu, no atributo pontos turisticos!\n");
+        printf("Pontos turisticos: %d\n", pturisticos01);
+        printf("Pontos turisticos: %d\n", pturisticos02);
+        soma01 = pturisticos01;
+        soma02 = pturisticos02;
+        if (pturisticos01 > pturisticos02) {
+            printf("A carta 01 venceu, no atributo pontos turisticos!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo pontos turisticos!\n");
+            printf("A carta 01 perdeu, no atributo pontos turisticos!\n\n");
         }
         break;
 
         case 5:
-        if (densidade03 == 1) {
-            printf("A carta 01 venceu, no atributo densidade populacional!\n");
+        printf("Densidade populacional: %.2lf\n", densidade01);
+        printf("Densidade populacional: %.2lf\n", densidade02);
+        soma01 = -densidade01;
+        soma02 = -densidade02;
+        if (densidade01 < densidade02) {
+            printf("A carta 01 venceu, no atributo densidade populacional!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo densidade populacional!\n");
+            printf("A carta 01 perdeu, no atributo densidade populacional!\n\n");
         }
         break;
     
         case 6: 
-        if (pibper03 == 1) {
-            printf("A carta 01 venceu, no atributo PIB percapto!\n");
+        printf("PIB percapto: %.2lf\n", pibper01);
+        printf("PIB percapto: %.2lf\n", pibper02);
+        soma01 = pibper01;
+        soma02 = pibper02;
+        if (pibper01 > pibper02) {
+            printf("A carta 01 venceu, no atributo PIB percapto!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo PIB percapto!\n");
+            printf("A carta 01 perdeu, no atributo PIB percapto!\n\n");
         }
         break;
 
         case 7:
-        if (superpoder03 == 1) {
-            printf("A carta 01 venceu, no atributo super poder!\n");
+        printf("Super poder: %.2lf\n", superpoder01);
+        printf("Super poder: %.2lf\n", superpoder02);
+        soma01 = superpoder01;
+        soma02 = superpoder02;
+        if (superpoder01 > superpoder02) {
+            printf("A carta 01 venceu, no atributo super poder!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo super poder!\n");
+            printf("A carta 01 perdeu, no atributo super poder!\n\n");
         }
         break;
     }
         
 
         switch (opcao02) {
-        case 1: 
-        if (populacao03 == 1) {
-            printf("A carta 01 venceu, no atributo população!\n");
+        case 1:
+        printf("População: %lu\n", populacao01);
+        printf("População: %lu\n", populacao02);
+        soma01 += (double)populacao01;
+        soma02 += (double)populacao02; 
+        if (populacao01 > populacao02) {
+            printf("A carta 01 venceu, no atributo população!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo população!!\n");
+            printf("A carta 01 perdeu, no atributo população!!\n\n");
         }
         break;
 
         case 2: 
-        if (area03 == 1) {
-            printf("A carta 01 venceu, no atributo area!\n");
+        printf("Area: %.2f\n", area01);
+        printf("Area: %.2f\n", area02);
+        soma01 += area01;
+        soma02 += area02;
+        if (area01 > area02) {
+            printf("A carta 01 venceu, no atributo area!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo area!\n");
+            printf("A carta 01 perdeu, no atributo area!\n\n");
         }
         break;
 
         case 3: 
-        if (pib03 == 1) {
-            printf("A carta 01 venceu, no atributo PIB!\n");
+        printf("P.I.B: %.2lf\n", pib01);
+        printf("P.I.B: %.2lf\n", pib02);
+        soma01 += pib01;
+        soma02 += pib02;
+        if (pib01 > pib02) {
+            printf("A carta 01 venceu, no atributo PIB!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo PIB!\n");
+            printf("A carta 01 perdeu, no atributo PIB!\n\n");
         }
         break;
 
         case 4:
-        if (pturisticos03 == 1) {
-            printf("A carta 01 venceu, no atributo pontos turisticos!\n");
+        printf("Pontos turisticos: %d\n", pturisticos01);
+        printf("Pontos turisticos: %d\n", pturisticos02);
+        soma01 += pturisticos01;
+        soma02 += pturisticos02;
+        if (pturisticos01 > pturisticos02) {
+            printf("A carta 01 venceu, no atributo pontos turisticos!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo pontos turisticos!\n");
+            printf("A carta 01 perdeu, no atributo pontos turisticos!\n\n");
         }
         break;
 
         case 5:
-        if (densidade03 == 1) {
-            printf("A carta 01 venceu, no atributo densidade populacional!\n");
+        printf("Densidade populacional: %.2lf\n", densidade01);
+        printf("Densidade populacional: %.2lf\n", densidade02);
+        soma01 += -densidade01;
+        soma02 += -densidade02;
+        if (densidade01 < densidade02) {
+            printf("A carta 01 venceu, no atributo densidade populacional!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo densidade populacional!\n");
+            printf("A carta 01 perdeu, no atributo densidade populacional!\n\n");
         }
         break;
 
-        case 6: 
-        if (pibper03 == 1) {
-            printf("A carta 01 venceu, no atributo PIB percapto!\n");
+        case 6:
+        printf("PIB percapto: %.2lf\n", pibper01);
+        printf("PIB percapto: %.2lf\n", pibper02);
+        soma01 += pibper01;
+        soma02 += pibper02;
+        if (pibper01 > pibper02) {
+            printf("A carta 01 venceu, no atributo PIB percapto!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo PIB percapto!\n");
+            printf("A carta 01 perdeu, no atributo PIB percapto!\n\n");
         }
         break;
 
         case 7:
-        if (superpoder03 == 1) {
-            printf("A carta 01 venceu, no atributo super poder!\n");
+        printf("Super poder: %.2lf\n", superpoder01);
+        printf("Super poder: %.2lf\n", superpoder02);
+        soma01 += superpoder01;
+        soma02 += superpoder02;
+        if (superpoder01 > superpoder02) {
+            printf("A carta 01 venceu, no atributo super poder!\n\n");
         } else {
-            printf("A carta 01 perdeu, no atributo super poder!\n");
+            printf("A carta 01 perdeu, no atributo super poder!\n\n");
         }
         break;
+                   
+    }   
 
-        
-    }
+        if (soma01 > soma02) {
+            printf("Carta 01 é a vencedora com maior soma de atributos!\n");
+        } else if (soma01 < soma02) {
+            printf("Carta 02 é a vencedora com maior soma de atributos!\n");
+        } else {
+            printf("Empate! As cartas têm a mesma soma de atributos.\n\n");
+        }
  
     
-
-
     return 0;
 }
 
