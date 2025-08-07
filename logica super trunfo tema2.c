@@ -26,7 +26,7 @@ printf("Cadastro de cartas\n\n");
 
     char estado01;
     char codigo01[4];
-    char cidade01[20];
+    char cidade01[35];
     unsigned long int populacao01;
     float area01; 
     double pib01;
@@ -45,7 +45,7 @@ printf("Cadastro de cartas\n\n");
     scanf(" %c", &estado01);
     
     printf("Digite o codigo alfanumerico da carta (EX: A00): ");
-    scanf("%s", codigo01);
+    scanf("%3s", codigo01);
 
     printf("Digite o nome da cidade: ");
     getchar();
@@ -61,7 +61,7 @@ printf("Cadastro de cartas\n\n");
     scanf("%lf", &pib01);
 
     if (pib01 > 0) {
-        pib01 = pib01 * 1000000000;
+        pib01 = pib01;
     } else {
         pib01 = 0;
     }
@@ -78,7 +78,7 @@ printf("Cadastro de cartas\n\n");
 
    
     if (populacao01 != 0) {
-            pibper01 = (double) pib01 / populacao01;
+            pibper01 = (double) pib01 * 1000000 / populacao01;
         } else {
             pibper01 = 0.0; // Ou outro valor apropriado
             printf("Atenção: População da Carta 1 é zero! PIB per Capita definida como 0.\\n");
@@ -128,7 +128,7 @@ printf("Cadastro de cartas\n\n");
 
     char estado02;
     char codigo02[4];
-    char cidade02[20];
+    char cidade02[35];
     unsigned long int populacao02;
     float area02;
     double pib02;
@@ -143,7 +143,7 @@ printf("Cadastro de cartas\n\n");
     scanf(" %c", &estado02);
         
     printf("Digite o codigo alfanumerico da carta (EX: A00): ");
-    scanf("%s", codigo02);
+    scanf("%3s", codigo02);
     
     printf("Digite o nome da cidade: ");
     getchar();
@@ -159,7 +159,7 @@ printf("Cadastro de cartas\n\n");
     scanf("%lf", &pib02);
 
     if (pib02 > 0) {
-        pib02 = pib02 * 1000000000;
+        pib02 = pib02;
     } else {
         pib02 = 0;
 
@@ -179,7 +179,7 @@ printf("Cadastro de cartas\n\n");
 
    
     if (populacao02 != 0) {
-            pibper02 = (double) pib02 / populacao02;
+            pibper02 = (double) pib02 * 1000000 / populacao02;
         } else {
             pibper02 = 0.0; // Ou outro valor apropriado
             printf("Atenção: População da Carta 2 é zero! PIB per Capita definida como 0.\\n");
@@ -228,7 +228,7 @@ printf("Cadastro de cartas\n\n");
 
     
     int opcao01, opcao02;  
-    double soma01, soma02;  
+    double soma01, soma02, soma03, soma04;  
 
     printf("COMPARAÇÃO DE CARTAS\n\n");  
     printf("Digite o numero de dois atributos abaixo.\n"); 
@@ -431,7 +431,8 @@ do {
         break;
                    
     }   
-
+ 
+           
         if (soma01 > soma02) {
             printf("Carta 01 é a vencedora com maior soma de atributos!\n");
         } else if (soma01 < soma02) {
@@ -439,6 +440,7 @@ do {
         } else {
             printf("Empate! As cartas têm a mesma soma de atributos.\n\n");
         }
+        
  
     
     return 0;
