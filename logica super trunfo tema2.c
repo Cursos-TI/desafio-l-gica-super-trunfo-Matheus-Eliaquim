@@ -78,7 +78,7 @@ printf("Cadastro de cartas\n\n");
 
    
     if (populacao01 != 0) {
-            pibper01 = (double) pib01 * 1000000 / populacao01;
+            pibper01 = (double) pib01 * 1000000000 / populacao01;
         } else {
             pibper01 = 0.0; // Ou outro valor apropriado
             printf("Atenção: População da Carta 1 é zero! PIB per Capita definida como 0.\\n");
@@ -179,7 +179,7 @@ printf("Cadastro de cartas\n\n");
 
    
     if (populacao02 != 0) {
-            pibper02 = (double) pib02 * 1000000 / populacao02;
+            pibper02 = (double) pib02 * 1000000000 / populacao02;
         } else {
             pibper02 = 0.0; // Ou outro valor apropriado
             printf("Atenção: População da Carta 2 é zero! PIB per Capita definida como 0.\\n");
@@ -433,13 +433,7 @@ do {
     }   
  
            
-        if (soma01 > soma02) {
-            printf("Carta 01 é a vencedora com maior soma de atributos!\n");
-        } else if (soma01 < soma02) {
-            printf("Carta 02 é a vencedora com maior soma de atributos!\n");
-        } else {
-            printf("Empate! As cartas têm a mesma soma de atributos.\n\n");
-        }
+      
         
  
     
