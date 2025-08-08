@@ -256,7 +256,12 @@ do {
 
      printf("\n\n");
 
+    //variavel para armazenar o resultado da comparação
+
+    int resultado01, resultado02;
+
     //codigo da comparação de cartas
+
 
     switch (opcao01) {
         case 1: 
@@ -266,11 +271,16 @@ do {
         soma02 = populacao02;
         if (populacao01 > populacao02) {
             printf("A carta 01 venceu, no atributo população!\n\n");
-        } else {
+            resultado01 = 1;
+        } else if (populacao01 < populacao02) {
             printf("A carta 01 perdeu, no atributo população!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo população!\n\n");
+            resultado01 = 0;
         }
         break;
-
+    
         case 2: 
         printf("Area: %.2f\n", area01);
         printf("Area: %.2f\n", area02);
@@ -278,8 +288,13 @@ do {
         soma02 = area02;
         if (area01 > area02) {
             printf("A carta 01 venceu, no atributo area!\n\n");
-        } else {
+            resultado01 = 1;
+        } else if (area01 < area02) {
             printf("A carta 01 perdeu, no atributo area!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo area!\n\n");
+            resultado01 = 0;
         }
         break;
 
@@ -290,8 +305,13 @@ do {
         soma02 = pib02;
         if (pib01 > pib02) {
             printf("A carta 01 venceu, no atributo PIB!\n\n");
-        } else {
+        resultado01 = 1;
+        } else if (pib01 < pib02) {
             printf("A carta 01 perdeu, no atributo PIB!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo PIB!\n\n");
+            resultado01 = 0;
         }
         break;
 
@@ -302,8 +322,13 @@ do {
         soma02 = pturisticos02;
         if (pturisticos01 > pturisticos02) {
             printf("A carta 01 venceu, no atributo pontos turisticos!\n\n");
-        } else {
+        resultado01 = 1;
+        } else if (pturisticos01 < pturisticos02) {
             printf("A carta 01 perdeu, no atributo pontos turisticos!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo pontos turisticos!\n\n");
+            resultado01 = 0;
         }
         break;
 
@@ -314,8 +339,13 @@ do {
         soma02 = -densidade02;
         if (densidade01 < densidade02) {
             printf("A carta 01 venceu, no atributo densidade populacional!\n\n");
-        } else {
+        resultado01 = 1;
+        } else if (densidade01 > densidade02) {
             printf("A carta 01 perdeu, no atributo densidade populacional!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo densidade populacional!\n\n");
+            resultado01 = 0;
         }
         break;
     
@@ -326,8 +356,13 @@ do {
         soma02 = pibper02;
         if (pibper01 > pibper02) {
             printf("A carta 01 venceu, no atributo PIB percapto!\n\n");
-        } else {
+        resultado01 = 1;
+        } else if (pibper01 < pibper02) {
             printf("A carta 01 perdeu, no atributo PIB percapto!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo PIB percapto!\n\n");
+            resultado01 = 0;
         }
         break;
 
@@ -338,8 +373,13 @@ do {
         soma02 = superpoder02;
         if (superpoder01 > superpoder02) {
             printf("A carta 01 venceu, no atributo super poder!\n\n");
-        } else {
+         resultado01 = 1;
+        } else if (superpoder01 > superpoder02) {
             printf("A carta 01 perdeu, no atributo super poder!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo super poder!\n\n");
+            resultado01 = 0;
         }
         break;
     }
@@ -352,10 +392,15 @@ do {
         printf("População: %lu\n", populacao02);
         soma03 = (double)populacao01;
         soma04 = (double)populacao02; 
-        if (populacao01 > populacao02) {
+         if (populacao01 > populacao02) {
             printf("A carta 01 venceu, no atributo população!\n\n");
+            resultado01 = 1;
+        } else if (populacao01 < populacao02) {
+            printf("A carta 01 perdeu, no atributo população!\n\n");
+            resultado01 = 2;
         } else {
-            printf("A carta 01 perdeu, no atributo população!!\n\n");
+            printf("Empate no atributo população!\n\n");
+            resultado01 = 0;
         }
         break;
 
@@ -366,8 +411,13 @@ do {
         soma04 = area02;
         if (area01 > area02) {
             printf("A carta 01 venceu, no atributo area!\n\n");
-        } else {
+            resultado01 = 1;
+        } else if (area01 < area02) {
             printf("A carta 01 perdeu, no atributo area!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo area!\n\n");
+            resultado01 = 0;
         }
         break;
 
@@ -378,8 +428,13 @@ do {
         soma04 = pib02;
         if (pib01 > pib02) {
             printf("A carta 01 venceu, no atributo PIB!\n\n");
-        } else {
+        resultado01 = 1;
+        } else if (pib01 < pib02) {
             printf("A carta 01 perdeu, no atributo PIB!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo PIB!\n\n");
+            resultado01 = 0;
         }
         break;
 
@@ -390,8 +445,13 @@ do {
         soma04 = pturisticos02;
         if (pturisticos01 > pturisticos02) {
             printf("A carta 01 venceu, no atributo pontos turisticos!\n\n");
-        } else {
+        resultado01 = 1;
+        } else if (pturisticos01 < pturisticos02) {
             printf("A carta 01 perdeu, no atributo pontos turisticos!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo pontos turisticos!\n\n");
+            resultado01 = 0;
         }
         break;
 
@@ -402,8 +462,13 @@ do {
         soma04 = -densidade02;
         if (densidade01 < densidade02) {
             printf("A carta 01 venceu, no atributo densidade populacional!\n\n");
-        } else {
+        resultado01 = 1;
+        } else if (densidade01 > densidade02) {
             printf("A carta 01 perdeu, no atributo densidade populacional!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo densidade populacional!\n\n");
+            resultado01 = 0;
         }
         break;
 
@@ -414,8 +479,13 @@ do {
         soma04 = pibper02;
         if (pibper01 > pibper02) {
             printf("A carta 01 venceu, no atributo PIB percapto!\n\n");
-        } else {
+        resultado01 = 1;
+        } else if (pibper01 < pibper02) {
             printf("A carta 01 perdeu, no atributo PIB percapto!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo PIB percapto!\n\n");
+            resultado01 = 0;
         }
         break;
 
@@ -426,8 +496,13 @@ do {
         soma04 = superpoder02;
         if (superpoder01 > superpoder02) {
             printf("A carta 01 venceu, no atributo super poder!\n\n");
-        } else {
+         resultado01 = 1;
+        } else if (superpoder01 > superpoder02) {
             printf("A carta 01 perdeu, no atributo super poder!\n\n");
+            resultado01 = 2;
+        } else {
+            printf("Empate no atributo super poder!\n\n");
+            resultado01 = 0;
         }
         break;
                    
@@ -453,19 +528,27 @@ do {
     printf("Atributo 01: %.2f\n", soma04);
     printf("Soma dos atributos: %.2f\n\n", soma06);
     
-     if ((soma01 > soma02) && (soma03 > soma04)) {
+     if (resultado01 == 1 && resultado02 == 1) {
             printf("Carta 01 é a vencedora com dois atributos maiores!\n");
-        } else if ((soma01 < soma02) && (soma03 < soma04)) {
+        } else if (resultado01 == 1 && resultado02 == 0) {
+            printf("Carta 01 é a vencedora com um atributo maior e um empate!\n");
+        } else if (resultado01 == 0 && resultado02 == 1) {
+            printf("Carta 01 é a vencedora com um atributo maior e um empate!\n");
+        }else if (resultado01 == 2 && resultado02 == 2 ) {
             printf("Carta 02 é a vencedora com dois atributos maiores!\n");
+        } else if (resultado02 == 0 && resultado02 == 2) {
+            printf("Carta 02 é a vencedora com um atributo maior e um empate!\n");
+        } else if (resultado02 == 2 && resultado02 == 0) {
+            printf("Carta 02 é a vencedora com um atributo maior e um empate!\n");
+        } else if (resultado01 == 0 && resultado02 == 0 ) {
+            printf("Empate! As cartas empataram nos dois atributos!\n");
+        } else if (resultado01 == 1 && resultado02 == 2) {
+            printf("Empate! Cada carta venceu em um atributo\n");
         } else {
-            printf("Empate! cada carta venceu em um atributo!\n\n");
-        }
- 
-           
-      
-        
- 
-    
+            printf("Empate! Cada carta venceu em um atributo\n");
+        }    
+             
+     
     return 0;
 }
 
