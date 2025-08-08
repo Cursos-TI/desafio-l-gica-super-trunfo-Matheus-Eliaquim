@@ -73,7 +73,7 @@ printf("Cadastro de cartas\n\n");
             densidade01 = (double) populacao01 / area01;
         } else {
             densidade01 = 0.0; // Ou outro valor apropriado
-            printf("Atenção: Área da Carta 1 é zero! Densidade populacional definida como 0.\\n");
+            printf("Atenção: Área da Carta 1 é zero! Densidade populacional definida como 0.\n");
         }
 
    
@@ -81,14 +81,14 @@ printf("Cadastro de cartas\n\n");
             pibper01 = (double) pib01 * 1000000000 / populacao01;
         } else {
             pibper01 = 0.0; // Ou outro valor apropriado
-            printf("Atenção: População da Carta 1 é zero! PIB per Capita definida como 0.\\n");
+            printf("Atenção: População da Carta 1 é zero! PIB per Capita definida como 0.\n");
         }
 
     if (densidade01 != 0) {
             superpoder01 = (double)populacao01 + area01 + pib01 + pturisticos01 + pibper01 + (1.0f / densidade01);
         } else {
             superpoder01 = (double)populacao01 + area01 + pib01 + pturisticos01 + pibper01; // Sem o inverso
-            printf("Atenção: Densidade populacional da Carta 1 é zero. Super Poder calculado sem o inverso da densidade.\\n");
+            printf("Atenção: Densidade populacional da Carta 1 é zero. Super Poder calculado sem o inverso da densidade.\n");
         }
 
         
@@ -174,7 +174,7 @@ printf("Cadastro de cartas\n\n");
             densidade02 = (double) populacao02 / area02;
         } else {
             densidade02 = 0.0; // Ou outro valor apropriado
-            printf("Atenção: Área da Carta 2 é zero! Densidade populacional definida como 0.\\n");
+            printf("Atenção: Área da Carta 2 é zero! Densidade populacional definida como 0.\n");
         }
 
    
@@ -182,14 +182,14 @@ printf("Cadastro de cartas\n\n");
             pibper02 = (double) pib02 * 1000000000 / populacao02;
         } else {
             pibper02 = 0.0; // Ou outro valor apropriado
-            printf("Atenção: População da Carta 2 é zero! PIB per Capita definida como 0.\\n");
+            printf("Atenção: População da Carta 2 é zero! PIB per Capita definida como 0.\n");
         }
 
     if (densidade02 != 0) {
             superpoder02 = (double)populacao02 + area02 + pib02 + pturisticos02 + pibper02 + (1.0f / densidade02);
         } else {
             superpoder02 = (double)populacao02 + area02 + pib02 + pturisticos02 + pibper02; // Sem o inverso
-            printf("Atenção: Densidade populacional da Carta 2 é zero. Super Poder calculado sem o inverso da densidade.\\n");
+            printf("Atenção: Densidade populacional da Carta 2 é zero. Super Poder calculado sem o inverso da densidade.\n");
         }
 
 
@@ -453,12 +453,12 @@ do {
     printf("Atributo 01: %.2f\n", soma04);
     printf("Soma dos atributos: %.2f\n\n", soma06);
     
-     if (soma05 > soma06) {
-            printf("Carta 01 é a vencedora com maior soma de atributos!\n");
-        } else if (soma05 < soma06) {
-            printf("Carta 02 é a vencedora com maior soma de atributos!\n");
+     if ((soma01 > soma02) && (soma03 > soma04)) {
+            printf("Carta 01 é a vencedora com dois atributos maiores!\n");
+        } else if ((soma01 < soma02) && (soma03 < soma04)) {
+            printf("Carta 02 é a vencedora com dois atributos maiores!\n");
         } else {
-            printf("Empate! As cartas têm a mesma soma de atributos.\n\n");
+            printf("Empate! cada carta venceu em um atributo!\n\n");
         }
  
            
